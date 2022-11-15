@@ -15,11 +15,13 @@ router.post('/Greeni', function (req, res) {
   let data = "";
   console.log('라우터2')
   // const spawn = require("child_process").spawn;
+  // aws ec2서버에는 python3가 깔려있어서 3로
   const outp = spawn("python3", ["talkmodel.py", userInput]);
-    console.log('greeni라우터진입: 나 : '+ userInput + ', 타입: ' + typeof(userInput))
-    outp.stdout.on("data", (result) => {
-      console.log('그리니 : '+result.toString());
-      res.json(result.toString())
+  console.log('talkmodel 오픈 = 나 : '+ userInput + ', 타입: ' + typeof(userInput))
+  outp.stdout.on("data", (result) => {
+    console.log('stdout 진입')
+    console.log('그리니 : '+result.toString());
+    res.json(result.toString())
   });
 });
 

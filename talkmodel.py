@@ -1,8 +1,8 @@
-import sys
+import sys #파이썬내장모듈
 import pandas as pd
-import json
-from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
+import json#파이썬내장모듈
+from sentence_transformers import SentenceTransformer #pip인스톨sentence_transformers
+from sklearn.metrics.pairwise import cosine_similarity 
 
 def cached_model():
     model = SentenceTransformer('jhgan/ko-sroberta-multitask')
@@ -21,5 +21,5 @@ def getName(user_input):
     answer = df.loc[df['distance'].idxmax()] # 최댓값을 구해서 답변 뽑기
     print( answer[2])   #print( answer['챗봇'])  #print(user_input[0],user_input[1])
 
-if __name__ == '__main__':
-    getName(sys.argv[1])
+#if __name__ == '__main__':
+getName(sys.argv[1])
