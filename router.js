@@ -21,7 +21,7 @@ router.post('/Greeni', function (req, res) {
   outp.stdout.on("data", (result) => {
     //console.error('에러남')
     console.log('stdout 진입')
-    console.log('그리니 : '+result.toString());
+    //console.log('그리니 : '+result.toString());
     //res.send(result.toString())
   });
 });
