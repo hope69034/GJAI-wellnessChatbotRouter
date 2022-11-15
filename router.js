@@ -19,10 +19,10 @@ router.post('/Greeni', function (req, res) {
   const outp = spawn("python3", ["talkmodel.py", userInput]);
   console.log('talkmodel 변수선언성공 = 나 : '+ userInput + ', 타입: ' + typeof(userInput))
   outp.stdout.on("data", (result) => {
-    console.error('에러남')
+    //console.error('에러남')
     console.log('stdout 진입')
     console.log('그리니 : '+result.toString());
-    res.send(result.toString())
+    //res.send(result.toString())
   });
 });
 
