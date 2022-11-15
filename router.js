@@ -22,7 +22,7 @@ router.post('/Greeni', function (req, res) {
     console.error('에러남')
     console.log('stdout 진입')
     console.log('그리니 : '+result.toString());
-    res.json(result.toString())
+    res.send(result.toString())
   });
 });
 
