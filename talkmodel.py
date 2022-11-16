@@ -23,5 +23,5 @@ def getName(user_input):
     #print(answer['챗봇'])
     
 if __name__ == '__main__':
-    getName(sys.argv[1])
-#getName('기분 좋아')
+    #getName(sys.argv[1])
+    getName('기분 좋아')
