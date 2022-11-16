@@ -25,7 +25,7 @@ router.post('/Greeni', function (req, res) {
     //console.log('그리니 : '+result.toString());
     res.json(result.toString())
   });
-  //res.send('음!!')
+  res.json('음!!')
 });
 
 module.exports = router;
