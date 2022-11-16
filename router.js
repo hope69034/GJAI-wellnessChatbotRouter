@@ -17,6 +17,7 @@ router.post('/Greeni', function (req, res) {
   // const spawn = require("child_process").spawn;
   // aws ec2서버에는 python3가 깔려있어서 3로
   //const outp = spawn("python3", ["talkmodel.py", userInput]);
+  console.error('에러남');
   const outp = spawn("python3", ["talkmodel.py"]);
   console.log('3. talkmodel 변수선언성공 stdout 진입 아직 안함 = 나 : '+ userInput + ', 타입: ' + typeof(userInput))
   
@@ -30,7 +31,6 @@ router.post('/Greeni', function (req, res) {
   });
 
   
-    console.error('에러남');
     res.json('음!!')
  
 
