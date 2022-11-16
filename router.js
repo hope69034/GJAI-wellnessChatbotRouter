@@ -21,6 +21,7 @@ router.post('/Greeni', function (req, res) {
   const outp = spawn("python3", ["talkmodel.py"]);
   console.log('3. talkmodel 변수선언성공 stdout 진입 아직 안함 = 나 : '+ userInput + ', 타입: ' + typeof(userInput))
 
+  try{
   outp.stdout.on("data", (result) => {
     //console.error('에러남')
     console.log('4. stdout 진입 성공 ')
@@ -28,9 +29,9 @@ router.post('/Greeni', function (req, res) {
     res.json(result.toString())
   });
 
-  
+}catch{
     res.send('음!!')
- 
+  }
 
   
 });
