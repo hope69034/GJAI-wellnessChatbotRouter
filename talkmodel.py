@@ -1,7 +1,7 @@
 import sys #파이썬내장모듈
-import pandas as pd
+import pandas as pd#pip install pandas
 import json#파이썬내장모듈
-from sentence_transformers import SentenceTransformer #pip인스톨sentence_transformers
+from sentence_transformers import SentenceTransformer #우분 pip인스톨sentence_transformers
 from sklearn.metrics.pairwise import cosine_similarity 
 
 def cached_model():
