@@ -1,8 +1,8 @@
 import sys #파이썬내장모듈
 import pandas as pd#pip install pandas
 import json#파이썬내장모듈
-from sentence_transformers import SentenceTransformer #우분 pip인스톨sentence_transformers
-from sklearn.metrics.pairwise import cosine_similarity 
+from sentence_transformers import SentenceTransformer #우분 pip 인스톨 -U sentence_transformers
+from sklearn.metrics.pairwise import cosine_similarity # pip install sklearn  
 
 def cached_model():
     model = SentenceTransformer('jhgan/ko-sroberta-multitask')
@@ -22,6 +22,6 @@ def getName(user_input):
     print(answer[2])   #print( answer['챗봇'])  #print(user_input[0],user_input[1])
     #print(answer['챗봇'])
     
-#if __name__ == '__main__':
-    #getName(sys.argv[1])
-getName('기분 좋아')
+if __name__ == '__main__':
+    getName(sys.argv[1])
+#getName('기분 좋아')
