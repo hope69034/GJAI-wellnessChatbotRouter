@@ -28,10 +28,10 @@ router.post('/Greeni', function (req, res) {
 
     console.log('4. stdout 진입 성공 ')
     console.log('그리니 : '+result.toString());
-    res.json(result.toString())
+    //res.json(result.toString())
 
   })
-
+res.send('11')
 
   });
 
