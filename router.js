@@ -19,13 +19,22 @@ router.post('/Greeni', function (req, res) {
   //const outp = spawn("python3", ["talkmodel.py", userInput]);
   const outp = spawn("python3", ["talkmodel.py"]);
   console.log('talkmodel 변수선언성공 stdout 진입 아직 안함 = 나 : '+ userInput + ', 타입: ' + typeof(userInput))
+  
+  try {
+
   outp.stdout.on("data", (result) => {
     //console.error('에러남')
     console.log('stdout 진입')
     //console.log('그리니 : '+result.toString());
     res.json(result.toString())
   });
-  res.json('음!!')
+
+  } catch (e) {
+    console.error(e);
+    res.json('음!!')
+  }
+
+  
 });
 
 module.exports = router;
