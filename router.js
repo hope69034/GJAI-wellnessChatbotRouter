@@ -20,17 +20,16 @@ router.post('/Greeni', function (req, res) {
   // aws ec2서버에는 python3가 깔려있어서 3로
   //const outp = spawn("python3", ["talkmodel.py", userInput]);
 
-  const outp = spawn("python", ["talkmodel.py",userInput]);
+  const outp = spawn("python3", ["talkmodel.py",userInput]);
   console.log('3. talkmodel 변수선언성공 stdout 진입 아직 안함 = 나 : '+ userInput + ', 타입: ' + typeof(userInput))
 
-  outp.stdout.on("data", (result) => {
-    //console.error('에러남')
-
+  outp.stdout.on("data", (result) => {  
     console.log('4. stdout 진입 성공 ')
     console.log('그리니 : '+result.toString());
+  })
+  //console.error('에러남')
     //res.json(result.toString())
 
-  })
 res.send('11')
 
   });
