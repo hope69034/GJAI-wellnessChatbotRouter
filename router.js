@@ -9,7 +9,11 @@ router.get('/', function (req, res) {
   res.redirect("http://127.0.0.1:5500/greeni.html")
 });
 
-router.get('/Greeni', function (req, res) {    
+router.get('/Greeni', function (req, res) {  
+  
+  try{
+
+
   console.log('1. 라우터진입')
   let userInput = req.query.userInput
   /* let userInput = req.body.userInput */
@@ -25,13 +29,16 @@ router.get('/Greeni', function (req, res) {
   
   outp.stdout.on("data", (result) => {
     //console.error('에러남')
-    try{
+   
     console.log('4. stdout 진입 성공 ')
     //console.log('그리니 : '+result.toString());
     res.json(result.toString())
-  }catch{
-    console.log('에러')
-  }
+
+  })
+
+}catch{
+  console.log('에러')
+}
 
   });
 
